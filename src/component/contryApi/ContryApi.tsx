@@ -43,12 +43,12 @@ function ContryApi() {
     console.log("cities", cities)
 
     return (
-
-        <div>
-            <div>
-                <label>Choose a contry</label>
-                <select onChange={handalChange} >
-                    <option>select contry</option>
+        <div className="container">
+            <h1 className="text-center pt-5">Select state API </h1>
+            <div className="input-group mb-3 pt-2">
+                <label className="input-group-text" htmlFor="inputGroupSelect01">Choose a contry</label>
+                <select className="form-select" id="inputGroupSelect01" onChange={handalChange} >
+                    <option>Select contry</option>
                     {
                         contry.map((cv: any, index: number) => {
                             return (
@@ -60,10 +60,10 @@ function ContryApi() {
                     }
                 </select>
             </div>
-            <div>
-                <label>Choose a states</label>
-                <select onChange={handalChange1} >
-                    <option>select state</option>
+            <div className="input-group mb-3">
+                <label className="input-group-text" htmlFor="inputGroupSelect01">Choose a states</label>
+                <select className="form-select" id="inputGroupSelect01" onChange={handalChange1} >
+                    <option>Select state</option>
                     {
                         state.map((cv: any, index: number) => {
                             return (
@@ -75,10 +75,10 @@ function ContryApi() {
                     }
                 </select>
             </div>
-            <div>
-                <label>Choose a citys</label>
-                <select>
-                    <option>select cities</option>
+            <div className="input-group mb-3">
+                <label className="input-group-text" htmlFor="inputGroupSelect01">Choose a citys</label>
+                <select className="form-select" id="inputGroupSelect01">
+                    <option>Select city</option>
                     {
                         cities.map((cv: any, index: number) => {
                             return (
@@ -91,6 +91,7 @@ function ContryApi() {
                 </select>
             </div>
         </div>
+
     )
 }
 
