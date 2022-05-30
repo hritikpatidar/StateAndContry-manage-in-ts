@@ -1,19 +1,13 @@
 import React, { useState } from 'react'
 import {  useNavigate } from 'react-router-dom';
+import initialState from '../Redux/initialState/InitialState';
 
-
-const initialState: { first_name: string, last_name: string, age: number | string, email: string, password: string } = {
-    first_name: "",
-    last_name: "",
-    age: "",
-    email: "",
-    password: ""
-}
 
 
 function Form() {
     //1. state/hooks
     const [data, setData] = useState(initialState);
+    
     const Navigate = useNavigate();
 
     //2. function defination

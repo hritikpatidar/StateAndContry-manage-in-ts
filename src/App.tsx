@@ -1,8 +1,10 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Form from './formDataTable/Form';
 import Table from './formDataTable/Table';
+import store from './Redux/store/Store';
 // import ContryApi from './component/contryApi/ContryApi';
 // import Form1 from './component/form/Form1';
 //import Form1 from './component/form/Form1';
@@ -14,18 +16,19 @@ function App() {
 
   return (
     <div className='App-header'>
-
-      {/* <Welcome name="ritik  " age={34} />
+      <Provider store={store}>
+        {/* <Welcome name="ritik  " age={34} />
         <Togglebutton />
         <Form /> 
         <Form1 /> 
         <ContryApi /> */}
-      <BrowserRouter>
-        <Routes>
-          <Route path='form' element={<Form />} />
-          <Route path="table" element={<Table />} />
-        </Routes>
-      </BrowserRouter>
+        <BrowserRouter>
+          <Routes>
+            <Route path='form' element={<Form />} />
+            <Route path="table" element={<Table />} />
+          </Routes>
+        </BrowserRouter>
+      </Provider>
     </div>
   );
 }
