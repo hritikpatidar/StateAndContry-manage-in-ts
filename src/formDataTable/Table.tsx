@@ -32,9 +32,9 @@ function Table() {
                                     <td>{cv.age}</td>
                                     <td>{cv.email}</td>
                                     <td>
-                                        <button>Viwe</button>
-                                        <button>Edit</button>
-                                        <button>Delete</button>
+                                        <button className='btn btn-primary btn-sm me-1' >Viwe</button>
+                                        <button className='btn btn-info btn-sm me-1'>Edit</button>
+                                        <button className='btn btn-danger btn-sm'>Delete</button>
                                     </td>
                                 </tr>
                             )
