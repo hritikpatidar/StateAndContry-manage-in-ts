@@ -1,34 +1,48 @@
-
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
 
 function Table() {
-    //1. state variable /hooks
+    let state = useSelector((state:any) => state)
+    console.log("state",state)
+   
+   
     const Navigate = useNavigate();
+    //2. function defination
     return (
         <>
             <table className="table table-dark table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">id</th>
-                        <th scope="col">First Name</th>
-                        <th scope="col">Last Name</th>
-                        <th scope="col">Age</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Password</th>
+                        <th>id</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Age</th>
+                        <th>Email</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>ritik</td>
-                        <td>patidar</td>
-                        <td>23</td>
-                        <td>hritikpatidar@gmail.com</td>
-                        <td>asdf@123</td>
-                    </tr>
+                    {
+                        state.user.map((cv:any,index:number)=>{
+                            return(
+                                <tr key={index}>
+                                    <td>{index+1}</td>
+                                    <td>{cv.first_name}</td>
+                                    <td>{cv.last_name}</td>
+                                    <td>{cv.age}</td>
+                                    <td>{cv.email}</td>
+                                    <td>
+                                        <button>Viwe</button>
+                                        <button>Edit</button>
+                                        <button>Delete</button>
+                                    </td>
+                                </tr>
+                            )
+                        })
+                    }
                 </tbody>
             </table>
-            <button type="submit" className="btn btn-primary" onClick={ ()=>{Navigate('/form')} }>Add More Data</button>
+            <button type="submit" className="btn btn-primary" onClick={()=>{ Navigate('/form')}}>Add More Data</button>
         </> 
 
     )

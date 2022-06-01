@@ -1,6 +1,6 @@
 
 
 
-let A= "get_data"
+let getData= "get_data"
 
-export default A;
+export default getData;

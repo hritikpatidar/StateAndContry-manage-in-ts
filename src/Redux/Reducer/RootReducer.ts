@@ -1,17 +1,24 @@
+
 import A from "../contants/Constants";
-import initialState from "../initialState/InitialState";
 
+const initialState: any = {
+  user: []
+}
 
-let rootReducer=(oldState=initialState,action:any)=>{
-    debugger
-    let newState = oldState;
-    switch(action.type){
-        case A:
-          return newState
-        default:
+let rootReducer = (state:any =initialState , action: any) => {
+  switch (action.type) {
+    case A:
+      return {
+        ...state,
+        user:action.payload
+        
+        // user:[...state.user,action.payload]
+        // user: [...state.user,action.data]
       }
-      debugger
-    return newState;
+
+    default:
+      return state
+  }
 
 }
 

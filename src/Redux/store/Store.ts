@@ -3,6 +3,7 @@ import rootReducer from "../Reducer/RootReducer";
 
 
 const store = legacy_createStore(rootReducer);
-console.log(store);
-debugger
+console.log("initialState",store.getState());
+store.subscribe(()=>{console.log("updateState",store.getState())});
+
 export default store;

@@ -1,10 +1,8 @@
 import React from 'react';
-import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Form from './formDataTable/Form';
 import Table from './formDataTable/Table';
-import store from './Redux/store/Store';
 // import ContryApi from './component/contryApi/ContryApi';
 // import Form1 from './component/form/Form1';
 //import Form1 from './component/form/Form1';
@@ -16,7 +14,7 @@ function App() {
 
   return (
     <div className='App-header'>
-      <Provider store={store}>
+     
         {/* <Welcome name="ritik  " age={34} />
         <Togglebutton />
         <Form /> 
@@ -28,7 +26,7 @@ function App() {
             <Route path="table" element={<Table />} />
           </Routes>
         </BrowserRouter>
-      </Provider>
+      
     </div>
   );
 }
