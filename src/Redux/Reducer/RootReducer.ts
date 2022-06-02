@@ -1,5 +1,5 @@
 
-import A from "../contants/Constants";
+import getData from "../contants/Constants";
 
 const initialState: any = {
   user: []
@@ -7,7 +7,7 @@ const initialState: any = {
 
 let rootReducer = (state:any =initialState , action: any) => {
   switch (action.type) {
-    case A:
+    case getData:
       return {
         ...state,
         user:action.payload
